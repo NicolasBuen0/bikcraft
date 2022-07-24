@@ -1,3 +1,23 @@
+//menu
+const btn = document.querySelector(".btn-menu");
+const nav = document.querySelector("nav");
+
+
+function toggle() {
+    nav.classList.toggle("ativo");
+}
+
+
+btn.addEventListener("click", toggle);
+
+function scroll () {
+    if(btn.getBoundingClientRect().top < -50){
+        nav.classList.remove("ativo");
+    }
+    console.log(btn.getBoundingClientRect().top)
+}
+console.log(btn.getBoundingClientRect().top)
+window.addEventListener("scroll", scroll)
 //ativar links do menu
 const links = document.querySelectorAll(".header-menu a");
 const linkAtual = window.location.href;
@@ -63,8 +83,6 @@ function trocarImagem(event) {
     if (media) {
         galeriaContainer.prepend(img);
     }
-
-
 }
 
 function eventosGaleria(img) {
